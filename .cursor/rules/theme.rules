@@ -1,0 +1,64 @@
+# Theme Rules
+# These rules help maintain consistency in theme-related code
+
+# Theme Component Rules
+[theme-component]
+description = "Rules for theme-aware components"
+match = "*.tsx?"
+when = "contains('useAppTheme')"
+rules = """
+1. Always use the `useAppTheme` hook to access theme functionality
+2. Wrap theme-dependent components with `observer` from mobx-react-lite
+3. Use themed styles with the `themed` function for all styles
+4. Follow the naming convention $styleName for themed style objects
+5. Use proper TypeScript types (ThemedStyle<ViewStyle | TextStyle>)
+"""
+
+# Theme Store Rules
+[theme-store]
+description = "Rules for theme store implementation"
+match = "*/models/ThemeStore.ts"
+rules = """
+1. Use mobx-state-tree for state management
+2. Persist theme changes using MMKV storage
+3. Include proper TypeScript types for all theme values
+4. Implement loadPersistedTheme for initial theme loading
+5. Use proper action methods for theme updates
+"""
+
+# Theme Definition Rules
+[theme-definition]
+description = "Rules for defining new themes"
+match = "*/theme/*.ts"
+rules = """
+1. Follow the color palette structure: neutral100-900, primary100-600, etc.
+2. Include all required theme properties: colors, spacing, typography, timing
+3. Set proper isDark flag for dark mode detection
+4. Use 'as const' for color literal types
+5. Export themes through the themes record in index.ts
+"""
+
+# Theme Hook Rules
+[theme-hook]
+description = "Rules for theme hook implementation"
+match = "*/utils/useAppTheme.ts"
+rules = """
+1. Implement proper theme context management
+2. Handle system theme preferences
+3. Support theme persistence through MobX store
+4. Provide proper TypeScript types for all exports
+5. Include themed style helper function
+"""
+
+# Theme Testing Rules
+[theme-test]
+description = "Rules for theme-related tests"
+match = "*.test.tsx?"
+when = "contains('theme')"
+rules = """
+1. Test theme switching functionality
+2. Verify theme persistence
+3. Test themed style application
+4. Verify proper observer wrapping
+5. Test system theme integration
+""" 
