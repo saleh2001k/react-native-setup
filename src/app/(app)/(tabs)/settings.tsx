@@ -14,7 +14,7 @@ type SupportedLanguage = "en" | "ar" | "es" | "fr"
 
 export default observer(function Settings() {
   const { themeContext, setThemeContextOverride, themed } = useAppTheme()
-  const { languageStore } = useStores()
+  const { languageStore, authenticationStore } = useStores()
 
   const handleThemeChange = (newTheme: ThemeContexts) => {
     switchTheme({
@@ -41,6 +41,10 @@ export default observer(function Settings() {
     }
     languageStore.setSelectedLanguage(language)
     i18n.changeLanguage(language)
+  }
+
+  const handleLogout = () => {
+    authenticationStore.logout()
   }
 
   return (
@@ -109,6 +113,7 @@ export default observer(function Settings() {
             />
           </View>
         </View>
+        <Button preset="filled" tx="settings:logout" onPress={handleLogout} />
       </View>
     </Screen>
   )

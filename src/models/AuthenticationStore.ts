@@ -1,3 +1,4 @@
+import { router } from "expo-router"
 import { Instance, SnapshotOut, types } from "mobx-state-tree"
 
 export const AuthenticationStoreModel = types
@@ -28,6 +29,7 @@ export const AuthenticationStoreModel = types
     logout() {
       store.authToken = undefined
       store.authEmail = ""
+      router.dismissTo("/(auth)/login")
     },
   }))
 

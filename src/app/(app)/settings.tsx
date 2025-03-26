@@ -1,10 +1,10 @@
-import { View, Text } from "react-native"
-
+import { Text } from "react-native"
+import { Screen } from "@/components"
 export default function Settings() {
   return (
     // eslint-disable-next-line react-native/no-inline-styles
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <Screen style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <Text>Settings Screen</Text>
-    </View>
+    </Screen>
   )
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { ViewStyle } from "react-native"
+import { View, ViewStyle } from "react-native"
 
 import { useFonts } from "@expo-google-fonts/space-grotesk"
 import { SplashScreen, Stack } from "expo-router"
@@ -27,6 +27,7 @@ export default function Root() {
   return (
     <Providers>
       <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="(auth)" />
         <Stack.Screen name="(app)" />
       </Stack>
     </Providers>
