@@ -6,7 +6,7 @@ import { Screen } from "@/components"
 export default function AppLayout() {
   return (
     <Drawer drawerContent={() => <DrawerContent />} screenOptions={{ headerShown: true }}>
-      <Drawer.Screen name="(tabs)" />
+      <Drawer.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen
         name="settings"
         options={{

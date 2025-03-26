@@ -12,7 +12,9 @@ import es from "./es"
 import fr from "./fr"
 import ja from "./ja"
 import hi from "./hi"
+import { load } from "@/utils/storage"
 
+const LANGUAGE_STORAGE_KEY = "SELECTED_LANGUAGE"
 const fallbackLocale = "en-US"
 
 const systemLocales = Localization.getLocales()
@@ -46,9 +48,13 @@ if (locale?.languageTag && locale?.textDirection === "rtl") {
 export const initI18n = async () => {
   i18n.use(initReactI18next)
 
+  // Try to load persisted language
+  const persistedLanguage = load<string>(LANGUAGE_STORAGE_KEY)
+  const initialLanguage = persistedLanguage || locale?.languageTag || fallbackLocale
+
   await i18n.init({
     resources,
-    lng: locale?.languageTag ?? fallbackLocale,
+    lng: initialLanguage,
     fallbackLng: fallbackLocale,
     interpolation: {
       escapeValue: false,

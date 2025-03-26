@@ -7,6 +7,22 @@ const en = {
     back: "Back",
     logOut: "Log Out",
   },
+  settings: {
+    themeSelection: "Theme Selection",
+    languageSelection: "Language Selection",
+    themes: {
+      light: "Light",
+      dark: "Dark",
+      sepia: "Sepia",
+      nightBlue: "Night Blue",
+    },
+    languages: {
+      en: "English",
+      ar: "Arabic",
+      es: "Spanish",
+      fr: "French",
+    },
+  },
   welcomeScreen: {
     postscript:
       "psst  — This probably isn't what your app looks like. (Unless your designer handed you these screens, and in that case, ship it!)",

@@ -3,10 +3,26 @@ import { Translations } from "./en"
 
 const ar: Translations = {
   common: {
-    ok: "نعم",
-    cancel: "حذف",
-    back: "خلف",
-    logOut: "تسجيل خروج",
+    ok: "موافق",
+    cancel: "إلغاء",
+    back: "رجوع",
+    logOut: "تسجيل الخروج",
+  },
+  settings: {
+    themeSelection: "اختيار المظهر",
+    languageSelection: "اختيار اللغة",
+    themes: {
+      light: "فاتح",
+      dark: "داكن",
+      sepia: "بني",
+      nightBlue: "أزرق داكن",
+    },
+    languages: {
+      en: "الإنجليزية",
+      ar: "العربية",
+      es: "الإسبانية",
+      fr: "الفرنسية",
+    },
   },
   welcomeScreen: {
     postscript:
